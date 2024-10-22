@@ -1,0 +1,141 @@
+INSERT INTO `user` (`id`, `name`, `email`, `pass`, `role`, `is_deleted`) VALUES
+                                                                             (1, 'SystemAdmin', 'sa123@gmail.com', '123456', 'ADMIN', 0),
+                                                                             (2, 'user1', 'user1@gmail.com', '123456', 'USER', 0);
+
+INSERT INTO `author` (`id`, `name`) VALUES
+                                        (1, 'Fujiko F. Fujio'),
+                                        (2, 'Eiichiro Oda'),
+                                        (3, 'Toriyama Akira'),
+                                        (4, 'Kishimoto Masashi'),
+                                        (5, 'Kubo Tite'),
+                                        (6, 'Sorachi Hideaki'),
+                                        (7, 'Maruyama Kugane'),
+                                        (8, 'Akutami Gege'),
+                                        (9, 'Gotouge Koyoharu'),
+                                        (10, 'Kim Sehoon (김세훈)'),
+                                        (11, 'Yabuno Tenya'),
+                                        (12, '9℃'),
+                                        (13, 'Suzuki Yuuto');
+
+INSERT INTO `state`(`id`,`name`) VALUES
+                                     (1,'ONGOING'),
+                                     (2,'FINISHED'),
+                                     (3,'DELAYED'),
+                                     (4,'CANCELLED');
+
+INSERT INTO `genre` (`id`, `name`) VALUES
+                                       (1, 'Action'),
+                                       (2, 'Adventure'),
+                                       (3, 'Comedy'),
+                                       (4, 'Crime'),
+                                       (5, 'Drama'),
+                                       (6, 'Fantasy'),
+                                       (7, 'Horror'),
+                                       (8, 'Isekai'),
+                                       (9, 'Mecha'),
+                                       (10,'Mystery'),
+                                       (11,'Philosophical'),
+                                       (12,'Psychological'),
+                                       (13,'Romance'),
+                                       (14,'Sci-Fi'),
+                                       (15,'Superhero'),
+                                       (16,'Sports'),
+                                       (17,'Thriller'),
+                                       (18,'Tragedy'),
+                                       (19,'Slice of Life'),
+                                       (20,'Wuxia');
+
+INSERT INTO `theme` (`id`, `name`) VALUES
+                                       (1, 'Aliens'),
+                                       (2, 'Animals'),
+                                       (3, 'Cooking'),
+                                       (4, 'Demons'),
+                                       (5, 'Ghosts'),
+                                       (6, 'Gyaru'),
+                                       (7, 'Harem'),
+                                       (8, 'Mafia'),
+                                       (9, 'Magic'),
+                                       (10,'Martial Arts'),
+                                       (11,'Monsters'),
+                                       (12,'Music'),
+                                       (13,'Reincarnation'),
+                                       (14,'School Life'),
+                                       (15,'Survival'),
+                                       (16,'Video Games'),
+                                       (17,'Villainess'),
+                                       (18,'Virtual Reality'),
+                                       (19,'Supernatural'),
+                                       (20,'Zombies');
+
+INSERT INTO `format` (`id`, `name`) VALUES
+                                       (1, '4-Koma'),
+                                       (2, 'Adaptation'),
+                                       (3, 'Anthology'),
+                                       (4, 'Full Color'),
+                                       (5, 'Oneshot'),
+                                       (6, 'Silent');
+
+INSERT INTO `comic` (`id`, `title`, `description`, `view`, `status`, `user_id`, `author_id`,`state_id`) VALUES
+ (1, 'Doraemon', '"Doraemon" is the masterpiece of Fujiko F. Fujio, one of Japan''s most famous mangaka duos. Doraemon, a cat-shaped robot from the future, and his best friend Nobita share a fantastical friendship.
+The mysterious tools taken out of his 4th dimensional pocket made the whole of Japan laugh. Shizuka-chan, Suneo, and Gian are also full of energy. The exciting and wonderful tools that give you big dreams will guide you to the heartwarming world of Doraemon.', 0, 'PUBLISH', 1, 1,2),
+
+ (2, 'One piece', 'Gol D. Roger, a man referred to as the "Pirate King," is set to be executed by the World Government. But just before his demise, he confirms the existence of a great treasure, One Piece, located somewhere within the vast ocean known as the Grand Line. Announcing that One Piece can be claimed by anyone worthy enough to reach it, the Pirate King is executed and the Great Age of Pirates begins.
+Twenty years later, a young man by the name of Monkey D. Luffy is ready to embark on his own adventure, searching for One Piece and striving to become the new Pirate King. Armed with just a straw hat, a small boat, and an elastic body, he sets out on a fantastic journey to gather his own crew and a worthy ship that will take them across the Grand Line to claim the greatest status on the high seas.', 0, 'PUBLISH', 1, 2,1),
+
+ (3, 'Dragon Ball', 'Dragon Ball follows the adventures of Son Goku from his childhood through adulthood as he trains in martial arts and explores the world in search of the seven mystical orbs known as the Dragon Balls, which can summon a wish-granting dragon when gathered. Along his journey, Goku makes several friends and battles a wide variety of villains, many of whom also seek the Dragon Balls for their own desires. Along the way becoming the strongest warrior in the universe.', 0, 'PUBLISH', 1, 3,2),
+
+ (4, 'Naruto', 'Before Naruto''s birth, a great demon fox had attacked the Hidden Leaf Village. The 4th Hokage from the leaf village sealed the demon inside the newly born Naruto, causing him to unknowingly grow up detested by his fellow villagers. Despite his lack of talent in many areas of ninjutsu, Naruto strives for only one goal: to gain the title of Hokage, the strongest ninja in his village. Desiring the respect he never received, Naruto works toward his dream with fellow friends Sasuke and Sakura and mentor Kakashi as they go through many trials and battles that come with being a ninja.', 0, 'PUBLISH', 1, 4,2),
+
+ (5, 'Bleach', 'Ichigo Kurosaki has always been able to see ghosts, but this ability doesn''t change his life nearly as much as his close encounter with Rukia Kuchiki, a Soul Reaper and member of the mysterious Soul Society. While fighting a Hollow, an evil spirit that preys on humans who display psychic energy, Rukia attempts to lend Ichigo some of her powers so that he can save his family, but much to her surprise, Ichigo absorbs every last drop of her energy.
+Now a full-fledged Soul Reaper himself, Ichigo quickly learns that the world he inhabits is one full of dangerous spirits, and along with Rukia, who is slowly regaining her powers, it''s Ichigo''s job to both protect the innocent from Hollows and to help the spirits themselves find peace.', 0, 'PUBLISH', 1, 5,2),
+
+ (6, 'Gintama', 'Sakata Gintoki is a samurai living in an era when samurai are no longer needed.
+To add to his troubles, oppressive aliens have moved in to invade. Gintoki lives with Kagura and Shinpachi, taking on odd jobs to make the world a better place… and to pay their rent.', 0, 'PUBLISH', 1, 6,2),
+
+ (7, 'Overlord', 'The final hour of the popular virtual reality game Yggdrasil has come. However, Momonga, a powerful wizard and master of the dark guild Ainz Ooal Gown, decides to spend his last few moments in the game as the servers begin to shut down. To his surprise, despite the clock having struck midnight, Momonga is still fully conscious as his character and, moreover, the non-player characters appear to have developed personalities of their own!
+Confronted with this abnormal situation, Momonga commands his loyal servants to help him investigate and take control of this new world, with the hopes of figuring out what has caused this development and if there may be others in the same predicament.', 0, 'PUBLISH', 1, 7,1),
+
+ (8, 'Jujutsu Kaisen', 'For some strange reason, Yuji Itadori, despite his insane athleticism would rather just hang out with the Occult Club. However, her soon finds out that the occult is as real as it gets when his fellow club members are attacked!
+Meanwhile, the mysterious Megumi Fushiguro is tracking down a special-grade cursed object, and his search leads him to Itadori...', 0, 'PUBLISH', 1, 8,2),
+
+ (9, 'Kimetsu no Yaiba', 'Since ancient times, rumors have abounded of man-eating demons lurking in the woods. Because of this, the local townsfolk never venture outside at night. Legend has it that a demon slayer also roams the night, hunting down these bloodthirsty demons.
+Ever since the death of his father, Tanjirou has taken it upon himself to support his mother and five siblings. Although their lives may be hardened by tragedy, they''ve found happiness. But that ephemeral warmth is shattered one day when Tanjirou finds his family slaughtered and the lone survivor, his sister Nezuko, turned into a demon. Adding to this sorrow, a demon hunter named Tomioka Giyuu arrived and was about to finish Nezuko off, but to his surprise she and Tanjiro started to protect each other. Seeing this oddity and Tanjiro''s promising fighting skills, Giyuu decides to send them to his old mentor to be trained.
+So begins Tanjiro''s life as a demon hunter, bound on a quest to cure his sister and find the one who murdered his entire family.', 0, 'PUBLISH', 1, 9,2),
+
+ (10, 'Hardcore Leveling Warrior', 'Known as Hardcore Leveling Warrior, Gong Won-Ho is the #1 player of the world''s biggest game, Lucid Adventure.
+But when a mysterious player kills Ethan and forces his character back to level 1, he will do anything to get back on top.
+New friends and old foes, as well as mysterious forces and his own dark past, will follow him as he does his best to take back what was once his!', 0, 'PUBLISH', 1, 10,2),
+
+ (11, 'Inazuma Eleven', 'Raimon Middle School ''s soccer club captain, Endou Mamoru is in a pinch - his club is about to be destroyed! Literally! To avert the wrecking ball and disbanding of the club, his team must win against the toughest soccer team in the area - Teikoku. Will Endou and his team meet a crushing defeat or will a mysterious transfer student with a fiery kick save them from disaster?!
+Won the 34th Annual Kodansha Manga Award for Best Children''s Manga.', 0, 'PUBLISH', 1, 11,2),
+
+ (12, 'Meguro-san wa Hajimete ja Nai', 'Third-year high school student Makoto Koga decides to confess to his crush, the school''s most beautiful girl, second-year Saki Meguro. To his surprise, she agrees to date him. But what surprises him even more is her following words: "I''m not a virgin."
+Unbeknownst to Koga, the surprisingly passive Meguro has the reputation of being the lascivious "easy girl" at school, not rejecting any boy that approaches her and having gone through multiple boyfriends.
+Will Koga persevere? Will he fare any differently than the rest?
+How will Meguro react to Koga, a boy who, for once, actually approached her before he knew of her reputation?', 0, 'PENDING', 1, 12,1),
+
+ (13, 'Sakamoto Days', 'Taro Sakamoto was the ultimate assassin, feared by villains and admired by hitmen. But one day…he fell in love! Retirement, marriage, fatherhood and then… Sakamoto gained weight! The chubby guy who runs the neighborhood store is actually a former legendary hitman! Can he protect his family from danger? Get ready to experience a new kind of action comedy series!', 0, 'PUBLISH', 1, 13,1),
+
+ (14, 'Mojako', 'Sorao, an ordinary student, meets Mojacko and Donmo, two aliens looking for a companion for a journey to space. He agrees to come with them, and goes on a fun, yet dangerous, adventure through space, and visit different planets.', 0, 'PUBLISH', 1, 1,4),
+
+ (15, 'Sand Land ', 'In the far future, war has destroyed the entire Earth, leaving only a barren wasteland where the supply of water is controlled by the greedy king. In search of a long-lost lake, Sheriff Rao asked the king of the demons for help...and got the king''s son, Beelzebub, and his assistant, Thief. Together the unlikely trio sets off across the desert, facing dragons, bandits and the deadliest foe of all... the King''s army itself! It''s travel adventure and tank action in this new story from Akira Toriyama, the creator of Dragon Ball Z!', 0, 'PUBLISH', 1, 3,3);
+
+
+
+
+INSERT INTO `chapter` (`id`, `name`, `chapter_index`, `comic_id`, `updated_time`) VALUES
+(1, '', 1, 1, '2024-12-06 21:14:53'),
+(2, '', 1, 2, '2024-12-13 09:59:32'),
+(3, '', 1, 3, '2024-12-13 10:07:34'),
+(4, '', 1, 4, '2024-12-13 10:08:57'),
+(5, '', 1, 5, '2024-12-13 10:10:07'),
+(6, '', 1, 6, '2024-12-13 10:11:12'),
+(7, '', 1, 7, '2024-12-13 10:17:50'),
+(8, '', 1, 8, '2024-12-13 10:18:41'),
+(9, '', 1, 9, '2024-12-13 10:19:24'),
+(10, '', 1, 10, '2024-12-13 10:20:44'),
+(11, '', 1, 11, '2024-12-13 10:21:52'),
+(12, '', 1, 12, '2024-12-13 10:24:37'),
+(13, '', 1, 13, '2024-12-13 10:54:39'),
+(14, '', 1, 14, '2024-12-13 10:54:39'),
+(15, '', 1, 15, '2024-12-13 10:57:55');
