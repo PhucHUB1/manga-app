@@ -229,15 +229,26 @@ CREATE TABLE `genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `genre` (`id`, `name`) VALUES
-(1, 'Hài hước'),
-(2, 'Lãng mạn'),
-(3, 'Hành động'),
-(4, 'Kinh dị'),
-(5, 'Học đường'),
-(6, 'Huyền bí'),
-(7, 'Thể thao'),
-(8, 'Hiện thực'),
-(9, 'Đời thường');
+(1, 'Action'),
+(2, 'Adventure'),
+(3, 'Comedy'),
+(4, 'Crime'),
+(5, 'Drama'),
+(6, 'Fantasy'),
+(7, 'Horror'),
+(8, 'Isekai'),
+(9, 'Mecha'),
+(10,'Mystery'),
+(11,'Philosophical'),
+(12,'Psychological'),
+(13,'Romance'),
+(14,'Sci-Fi'),
+(15,'Superhero'),
+(16,'Sports'),
+(17,'Thriller'),
+(18,'Tragedy'),
+(19,'Slice of Life'),
+(20,'Wuxia');
 
 
 

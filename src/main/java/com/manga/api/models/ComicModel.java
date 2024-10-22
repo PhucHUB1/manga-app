@@ -3,7 +3,6 @@ package com.manga.api.models;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
-
 import com.manga.api.enums.StatusType;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -12,7 +11,6 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.data.annotation.CreatedDate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -29,6 +27,7 @@ public class ComicModel {
 
 	private String title;
 
+	@Column(length = 65555)
 	private String description;
 
 	private long view;
@@ -36,7 +35,6 @@ public class ComicModel {
 	@Enumerated(EnumType.STRING)
 	private StatusType status;
 
-	@CreatedDate
 	private LocalDateTime updatedTime;
 	
 	@ManyToOne(optional = false)
@@ -52,6 +50,18 @@ public class ComicModel {
 	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE })
 	@JoinTable(name = "comic_genre", joinColumns = @JoinColumn(name = "comic_id"), inverseJoinColumns = @JoinColumn(name = "genre_id"))
 	private Set<GenreModel> genres = new HashSet<>();
+
+	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE })
+	@JoinTable(name = "comic_theme", joinColumns = @JoinColumn(name = "comic_id"), inverseJoinColumns = @JoinColumn(name = "theme_id"))
+	private Set<ThemeModel> themes = new HashSet<>();
+
+	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE })
+	@JoinTable(name = "comic_format", joinColumns = @JoinColumn(name = "comic_id"), inverseJoinColumns = @JoinColumn(name = "format_id"))
+	private Set<FormatModel> formats = new HashSet<>();
+
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "state_id", nullable = false)
+	private StateModel state;
 
 	@OneToMany(mappedBy = "comic", fetch = FetchType.EAGER)
 	private Set<ChapterModel> chapters = new HashSet<>();

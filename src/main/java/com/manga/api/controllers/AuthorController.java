@@ -5,7 +5,9 @@ import java.util.List;
 
 
 import com.manga.api.models.AuthorModel;
+import com.manga.api.models.ComicModel;
 import com.manga.api.repositories.IAuthorRepository;
+import com.manga.api.repositories.IComicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthorController {
 	@Autowired
 	private IAuthorRepository authorRepo;
+
+	@Autowired
+	private IComicRepository comicRepo;
 
 	@GetMapping
 	public ResponseEntity<List<AuthorModel>> getAll() {
@@ -68,6 +73,18 @@ public class AuthorController {
 			return new ResponseEntity<AuthorModel>(authorRepo.save(authorModel), HttpStatus.OK);
 		}).orElseGet(() -> new ResponseEntity<AuthorModel>(HttpStatus.NOT_FOUND));
 	}
+
+	@GetMapping("/{id}/comics")
+	public ResponseEntity<List<ComicModel>> getAllComicsByAuthorId(@PathVariable("id") long id){
+		if(!authorRepo.existsById(id))
+		{
+			return new ResponseEntity<List<ComicModel>>(HttpStatus.NOT_FOUND);
+		}
+
+		List<ComicModel> comics = comicRepo.findComicsByAuthorId(id);
+		return new ResponseEntity<List<ComicModel>>(comics, HttpStatus.OK);
+	}
+
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<HttpStatus> delete(@PathVariable long id) {
