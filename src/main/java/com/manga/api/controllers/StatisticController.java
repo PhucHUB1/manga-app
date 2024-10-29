@@ -1,9 +1,6 @@
 package com.manga.api.controllers;
 
-import com.manga.api.repositories.IAuthorRepository;
-import com.manga.api.repositories.IComicRepository;
-import com.manga.api.repositories.IGenreRepository;
-import com.manga.api.repositories.IUserRepository;
+import com.manga.api.repositories.*;
 import com.manga.api.response.StatisticModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,7 +25,8 @@ public class StatisticController {
 	
 	@Autowired
 	IAuthorRepository authorRepo;
-	
+
+
 	@GetMapping
 	public ResponseEntity<StatisticModel> getReport(){
 		StatisticModel statistic = new StatisticModel();
@@ -36,7 +34,7 @@ public class StatisticController {
 		statistic.setTotalComic(comicRepo.count());
 		statistic.setTotalGenre(genreRepo.count());
 		statistic.setTotalAuthor(authorRepo.count());
-		
+
 		return new ResponseEntity<StatisticModel>(statistic, HttpStatus.OK);
 	}
 }

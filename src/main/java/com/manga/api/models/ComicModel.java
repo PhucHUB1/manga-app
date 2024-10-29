@@ -51,18 +51,6 @@ public class ComicModel {
 	@JoinTable(name = "comic_genre", joinColumns = @JoinColumn(name = "comic_id"), inverseJoinColumns = @JoinColumn(name = "genre_id"))
 	private Set<GenreModel> genres = new HashSet<>();
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE })
-	@JoinTable(name = "comic_theme", joinColumns = @JoinColumn(name = "comic_id"), inverseJoinColumns = @JoinColumn(name = "theme_id"))
-	private Set<ThemeModel> themes = new HashSet<>();
-
-	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE })
-	@JoinTable(name = "comic_format", joinColumns = @JoinColumn(name = "comic_id"), inverseJoinColumns = @JoinColumn(name = "format_id"))
-	private Set<FormatModel> formats = new HashSet<>();
-
-	@ManyToOne(optional = false)
-	@JoinColumn(name = "state_id", nullable = false)
-	private StateModel state;
-
 	@OneToMany(mappedBy = "comic", fetch = FetchType.EAGER)
 	private Set<ChapterModel> chapters = new HashSet<>();
 	

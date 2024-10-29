@@ -101,7 +101,6 @@ public class ComicController {
 		newComic.setAuthor(comicModel.getAuthor());
 		newComic.setUser(comicModel.getUser());
 		newComic.setGenres(comicModel.getGenres());
-		newComic.setState(comicModel.getState());
 		newComic.setUpdatedTime(LocalDateTime.now());
 
 		return new ResponseEntity<ComicModel>(comicRepo.save(newComic), HttpStatus.OK);
